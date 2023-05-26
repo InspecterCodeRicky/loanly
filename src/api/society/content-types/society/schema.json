@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "societies",
+  "info": {
+    "singularName": "society",
+    "pluralName": "societies",
+    "displayName": "Society"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "libelle": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "codeSociety": {
+      "type": "uid",
+      "required": true
+    },
+    "users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "society"
+    }
+  }
+}

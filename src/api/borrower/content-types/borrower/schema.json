@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "borrowers",
+  "info": {
+    "singularName": "borrower",
+    "pluralName": "borrowers",
+    "displayName": "borrower",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "prenom": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "tel": {
+      "type": "string",
+      "required": true
+    },
+    "CNI": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "society": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::society.society"
+    }
+  }
+}
